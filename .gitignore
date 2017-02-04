@@ -1,0 +1,12 @@
+node_modules/
+public/
+.sass-cache/
+sketch/
+dist/
+coverage/
+.nyc_output/
+*.DS_Store
+test-bundle.js
+npm-debug.log
+scripts/deploy
+.coveralls.yml
