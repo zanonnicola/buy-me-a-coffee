@@ -48,8 +48,62 @@
 	<link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
 </head>
 <body>
-  <div class="wrapper">
-    <a href="#0">Hello</a>
-  </div>
+  <header class="header">
+    <div class="wrapper">
+      <img src="./img/coffee.svg" alt="Coffee">
+      <div class=header__intro>
+        <h1>Buy me a coffee ;)</h1>
+        <h2>Simple <strong>PWA</strong> leveraging the new Payment Request API</h2>
+      </div>
+    </div>
+  </header>
+  <section class="source-code">
+    <div class="wrapper no-y-padding">
+      <span>Source<br />code</span>
+      <a href="https://github.com/zanonnicola/buy-me-a-coffee" title="GitHub">
+        <img src="./img/git.svg" alt="SourceCode">
+      </a>
+    </div>
+  </section>
+  <section class="shopping-cart">
+    <div class="wrapper">
+      <div class="product">
+        <div class="product-left">
+          <img src="./img/mug.svg" alt="Mug">
+          <span>x 0</span>
+        </div>
+        <a href="#0" class="product-right">
+          <img src="./img/smile.svg" alt="Smile">
+          <span>BUY</span>
+        </a>
+      </div>
+      <div class="total">
+        <p>Tot. <span>4.20</span>£</p>
+      </div>
+    </div>
+  </section>
+  <article class="info">
+    <div class="wrapper no-y-padding">
+      <h3>Info</h3>
+      <p><strong>Payment Request</strong> is a new API for the open web that makes checkout flows easier, faster and consistent on shopping sites.</p>
+      <p><a href="https://developers.google.com/web/updates/2016/07/payment-request">Find out more</a></p>
+    </div>
+  </article>
+  <article class="info last">
+    <div class="wrapper no-y-padding">
+      <h3>Testing</h3>
+      <p>You can use the following credit card for your transaction.</p>
+      <pre>
+        <code>
+VISA
+
+4005519200000004
+07/19
+890
+        </code>
+      </pre>
+    </div>
+  </article>
+  <a href="#0" class="order" id="order">Checkout</a>
 </body>
 </html>

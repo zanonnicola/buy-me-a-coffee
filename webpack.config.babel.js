@@ -5,6 +5,7 @@ const { getIfUtils, removeEmpty } = require('webpack-config-utils');
 const webpack = require('webpack');
 const nodeExternals = require('webpack-node-externals');
 const InlineManifestWebpackPlugin = require('inline-manifest-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const OfflinePlugin = require('offline-plugin');
 
@@ -23,7 +24,7 @@ module.exports = (env) => {
     },
     devtool: ifProd('source-map', 'eval'),
     performance: {
-      hints: ifProd(true, false),
+      hints: ifProd('warning', false),
     },
     module: {
       rules: [
@@ -67,6 +68,9 @@ module.exports = (env) => {
       new HtmlWebpackPlugin({
         template: './index.html',
       }),
+      new CopyWebpackPlugin([
+        { from: './img', to: 'img' },
+      ]),
     ]),
     externals: ifProduction([nodeExternals()]),
     node: {
