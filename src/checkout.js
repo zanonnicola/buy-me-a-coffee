@@ -29,7 +29,7 @@ export function initPaymentAPI(displayItems) {
   };
   details.displayItems = displayItems;
   const total = displayItems.map(displayItem => displayItem.amount.value);
-  details.total.amount.value = total.reduce((a, b) => a + b, 0);
+  details.total.amount.value = (total.reduce((a, b) => a + b, 0)).toFixed(2);
   console.log(details);
   // 1. Create a `PaymentRequest` instance
   return new PaymentRequest(supportedInstruments, details, options);
