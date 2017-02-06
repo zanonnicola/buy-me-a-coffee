@@ -1,3 +1,0 @@
-export SURGE_LOGIN=nicola.zanon86@gmail.com
-export SURGE_TOKEN=e85a2e7de1baeceb26bfcd2d61ff5e23
-node_modules/.bin/surge --project dist --domain https://money-transfer-zanonnicola.surge.sh
