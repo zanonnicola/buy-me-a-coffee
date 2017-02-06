@@ -29,8 +29,15 @@ function bootstrap() {
   });
   order.addEventListener('click', (evt) => {
     evt.preventDefault();
-    const request = initPaymentAPI(displayItems);
-    initPaymentRequest(request);
+    if (!window.PaymentRequest) {
+      // PaymentRequest API is not available. Forwarding to
+      // legacy form based experience.
+      console.log('PaymentRequest API is not available');
+      document.getElementById('result').innerHTML = 'PaymentRequest API is not available :(';
+    } else {
+      const request = initPaymentAPI(displayItems);
+      initPaymentRequest(request);
+    }
   });
   if (process.env.NODE_ENV === 'production') {
     offlineInstall();

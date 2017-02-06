@@ -15,7 +15,6 @@ module.exports = (env) => {
     context: resolve('src'),
     entry: {
       app: ['babel-polyfill', 'whatwg-fetch', './app.js'],
-      vendor: ['./vendor/lib.js'],
     },
     output: {
       path: resolve('dist'),
@@ -35,9 +34,9 @@ module.exports = (env) => {
           query: {
             babelrc: ifProd(false, true),
             presets: [
-              ['es2015', { modules: false }],
+              ['es2015'],
             ],
-            plugins: ['transform-runtime', 'transform-object-rest-spread'],
+            plugins: ['transform-runtime'],
           },
         },
         { test: /\.(png|woff|woff2|eot|ttf|svg)$/, loader: 'url-loader?limit=100000' },
@@ -63,7 +62,7 @@ module.exports = (env) => {
       new ExtractTextPlugin(ifProd('styles.[name].[chunkhash].css', 'styles.[name].css')),
       ifProd(new InlineManifestWebpackPlugin()),
       ifProd(new webpack.optimize.CommonsChunkPlugin({
-        names: ['vendor', 'manifest'],
+        names: ['manifest'],
       })),
       new HtmlWebpackPlugin({
         template: './index.html',
