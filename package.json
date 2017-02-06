@@ -7,7 +7,7 @@
     "test": "env NODE_ENV=test karma start",
     "watch:test": "npm test -- --auto-watch --no-single-run",
     "coverage": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
-    "lint": "eslint src/app.js",
+    "lint": "eslint src/*.js",
     "lint:test": "eslint test/*.js",
     "clean": "rimraf dist/*",
     "dev": "webpack-dev-server --env.dev --hot",

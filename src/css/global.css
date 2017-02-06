@@ -18,6 +18,7 @@ a {
 	text-decoration:none;
 	transition: all 0.5s ease;
 	outline: 0;
+	color: $black;
 	&:visited {
 		color: $black;
 	}
@@ -99,6 +100,8 @@ body {
 	text-align: right;
 	background: url('/img/latte.svg') no-repeat 0 0;
 	margin-bottom: 40px;
+	max-width: 600px;
+	margin: 0 auto;
 }
 .flex {
 	display: flex;
