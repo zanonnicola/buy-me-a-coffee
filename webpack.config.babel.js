@@ -34,7 +34,7 @@ module.exports = (env) => {
           query: {
             babelrc: ifProd(false, true),
             presets: [
-              ['es2015'],
+              ['es2015', { modules: false }],
             ],
             plugins: ['transform-runtime'],
           },
@@ -52,9 +52,6 @@ module.exports = (env) => {
     },
     plugins: removeEmpty([
       new ProgressBarPlugin(),
-      ifProd(new OfflinePlugin({
-        externals: ['img/coffee.svg', 'img/git.svg', 'img/latte.svg', 'img/mug.svg', 'img/smile.svg', 'favicon.ico'],
-      })),
       new webpack.DefinePlugin({
         'process.env': {
           BROWSER: JSON.stringify(true),
@@ -72,6 +69,9 @@ module.exports = (env) => {
       new CopyWebpackPlugin([
         { from: './img', to: 'img' },
       ]),
+      ifProd(new OfflinePlugin({
+        externals: ['img/coffee.svg', 'img/git.svg', 'img/latte.svg', 'img/mug.svg', 'img/smile.svg', 'favicon.ico', 'index.html'],
+      })),
     ]),
     externals: ifProduction([nodeExternals()]),
     node: {

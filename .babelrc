@@ -9,7 +9,6 @@
   "ignore": [
       "node_modules"
   ],
-  "plugins": ["transform-object-rest-spread"],
   "env": {
     "test": {
       "plugins": [ "istanbul" ]
