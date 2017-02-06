@@ -37,8 +37,7 @@ export function initPaymentAPI(displayItems) {
 
 export function initPaymentRequest(request) {
   if (!window.PaymentRequest) {
-    // PaymentRequest API is not available. Forwarding to
-    // legacy form based experience.
+    // PaymentRequest API is not available.
     console.log('PaymentRequest API is not available');
     document.getElementById('result').innerHTML = 'PaymentRequest API is not available :(';
     return;
