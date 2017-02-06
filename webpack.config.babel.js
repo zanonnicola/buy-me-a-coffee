@@ -53,7 +53,7 @@ module.exports = (env) => {
     plugins: removeEmpty([
       new ProgressBarPlugin(),
       ifProd(new OfflinePlugin({
-        externals: ['img/*'],
+        externals: ['img/coffee.svg', 'img/git.svg', 'img/latte.svg', 'img/mug.svg', 'img/smile.svg', 'favicon.ico'],
       })),
       new webpack.DefinePlugin({
         'process.env': {
