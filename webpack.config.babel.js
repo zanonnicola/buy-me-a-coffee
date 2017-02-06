@@ -52,7 +52,9 @@ module.exports = (env) => {
     },
     plugins: removeEmpty([
       new ProgressBarPlugin(),
-      ifProd(new OfflinePlugin()),
+      ifProd(new OfflinePlugin({
+        externals: ['img/*'],
+      })),
       new webpack.DefinePlugin({
         'process.env': {
           BROWSER: JSON.stringify(true),
