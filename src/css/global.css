@@ -199,6 +199,7 @@ body {
 	left: 0;
 	width: 100%;
 	display: block;
+	display: none;
 	text-align: center;
 	color: #fff;
 	background-color: #3F9379;

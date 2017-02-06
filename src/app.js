@@ -14,18 +14,19 @@ function bootstrap() {
   let counter = 0;
   const price = 2.10;
   let total;
-  const displayItems = [
-    {
-      label: 'Coffee Mug',
-      amount: { currency: 'GBP', value: price },
-    },
-  ];
+  const displayItems = [];
   buyBtn.addEventListener('click', (evt) => {
     evt.preventDefault();
     counter += 1;
     quantity.innerHTML = counter;
     total = (price * counter).toFixed(2);
     cartTotal.innerHTML = total;
+    order.style.display = 'block';
+
+    displayItems.push({
+      label: `Coffee Mug ${counter}`,
+      amount: { currency: 'GBP', value: price },
+    });
   });
   order.addEventListener('click', (evt) => {
     evt.preventDefault();
