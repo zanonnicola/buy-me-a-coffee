@@ -24,4 +24,4 @@ deploy:
   provider: surge
   project: ./dist/
   skip_cleanup: true
-  domain: coffee-zanonnicola.surge.sh
+  domain: https://coffee-zanonnicola.surge.sh
